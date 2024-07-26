@@ -1,0 +1,33 @@
+spring:
+  redis:
+    port: 6379
+    host: localhost
+    database: 3
+  session:
+    store-type: redis
+  application:
+    name: pipei
+
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://rm-cn-v8q3tfglx0003mjo.rwlb.rds.aliyuncs.com/pipei?serverTimezone=Asia/Shanghai&&useSSL=false
+    username: root
+    password: Food130132@
+
+mybatis-plus:
+  global-config:
+    db-config:
+      logic-delete-field: isDelete
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+    session:
+      cookie:
+        domain: 42.193.112.225
+        same-site: lax
+        secure: false
